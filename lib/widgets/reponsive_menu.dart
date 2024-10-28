@@ -1,5 +1,6 @@
 import 'dart:convert';
 import 'package:final_proj_flutter/models/menu_model.dart';
+import 'package:final_proj_flutter/screens/menu_detail.dart';
 import 'package:final_proj_flutter/widgets/menu_item_card.dart';
 import 'package:final_proj_flutter/widgets/top_scroll.dart';
 import 'package:flutter/material.dart';
@@ -77,8 +78,16 @@ class _ResponsiveMenuState extends State<ResponsiveMenu> {
                   itemCount: menuItems!.length,
                   itemBuilder: (context, index) {
                     final menuItem = menuItems![index];
-                    return MenuItemCard(
-                      menuModel: menuItem,
+                    return FloatingActionButton(
+                      heroTag: menuItem,
+                      onPressed: () => Navigator.push(
+                          context,
+                          MaterialPageRoute(
+                            builder: (context) => MenuDetail(item: menuItem),
+                          )),
+                      child: MenuItemCard(
+                        menuModel: menuItem,
+                      ),
                     );
                   },
                 );

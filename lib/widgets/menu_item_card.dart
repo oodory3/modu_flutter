@@ -22,7 +22,6 @@ class MenuItemCard extends StatelessWidget {
               borderRadius: BorderRadius.circular(12),
               child: Image.asset(
                 '/Users/sun/Desktop/hackaton/flutter/frontend/assets/images/set1.png',
-                // height: 10,
                 fit: BoxFit.cover,
               ),
             ),
